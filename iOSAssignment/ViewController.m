@@ -92,8 +92,8 @@
     User *aUser = [User new];
     aUser.displayName = value[@"name"];
     
-    NSNumber *number = [value objectForKey:@"online"];
-    NSInteger onlineFlagBool = [number integerValue];
+    NSNumber *onlineBoolInNumber = [value objectForKey:@"online"];
+    NSInteger onlineFlagBool = [onlineBoolInNumber integerValue];
     
     if (onlineFlagBool == 0) {
       aUser.onlineFlag = false;
@@ -101,8 +101,8 @@
       aUser.onlineFlag = true;
     }
     
-    NSNumber *number1 = [value objectForKey:@"accepted"];
-    NSInteger acceptedFlagBool = [number1 integerValue];
+    NSNumber *acceptedBoolInNumber = [value objectForKey:@"accepted"];
+    NSInteger acceptedFlagBool = [acceptedBoolInNumber integerValue];
     
     if (acceptedFlagBool == 0) {
       aUser.acceptedFlag = false;
