@@ -1,0 +1,52 @@
+{
+	"USERS": [{
+		"User1": {
+			"name": "Danny",
+			"online": 0,
+			"accepted": 1,
+			"notificationCount": 6
+		},
+		"User2": {
+			"name": "Rachel",
+			"online": 1,
+			"accepted": 1,
+			"notificationCount": 0
+		},
+		"User3": {
+			"name": "Jennifer",
+			"online": 1,
+			"accepted": 1,
+			"notificationCount": 0
+		},
+		"User4": {
+			"name": "Charlie",
+			"online": 1,
+			"accepted": 1,
+			"notificationCount": 0
+		},
+		"User5": {
+			"name": "Beverly",
+			"online": 0,
+			"accepted": 0,
+			"notificationCount": 0
+		},
+		"User6": {
+			"name": "Chelsea",
+			"online": 1,
+			"accepted": 1,
+			"notificationCount": 4
+		},
+		"User7": {
+			"name": "Michael",
+			"online": 0,
+			"accepted": 0,
+			"notificationCount": 0
+		},
+		"User8": {
+			"name": "Joseph",
+			"online": 1,
+			"accepted": 1,
+			"notificationCount": 1
+		}
+	}]
+}
