@@ -48,25 +48,33 @@
   User *aUser = (User *)[self.arrayOfUsers objectAtIndex:indexPath.row];
   cell = [cell initWithName:aUser.displayName andImage:[UIImage imageNamed:aUser.displayName]];
   
-  if (aUser.isOnline) {
-    cell.isOnline.image = [UIImage imageNamed:@"online"];
-  }else {
-    cell.isOnline.image = [UIImage imageNamed:@"offline"];
+  switch (aUser.isOnline) {
+    case true:
+      cell.isOnline.image = [UIImage imageNamed:@"online"];
+      break;
+    case false:
+      cell.isOnline.image = [UIImage imageNamed:@"offline"];
+      break;
   }
   
-  if (aUser.hasAccepted) {
-    cell.hasAccepted.hidden = true;
-  }else {
-    cell.hasAccepted.hidden = false;
+  switch (aUser.hasAccepted) {
+    case true:
+      cell.hasAccepted.hidden = true;
+      break;
+    case false:
+      cell.hasAccepted.hidden = false;
+      break;
   }
   
   cell.notificationNumber.text = aUser.notificationCount.stringValue;
-  if (aUser.notificationCount.intValue == 0){
-    cell.notificationBadge.hidden = true;
-  }else {
-    cell.notificationBadge.hidden = false;
+  switch (aUser.notificationCount.intValue) {
+    case 0:
+      cell.notificationBadge.hidden = true;
+      break;
+    default:
+      cell.notificationBadge.hidden = false;
+      break;
   }
-  
   return cell;
 }
 
@@ -91,25 +99,26 @@
   for (NSDictionary* value in jsonDictionary.allValues) {
     User *aUser = [User new];
     aUser.displayName = value[@"name"];
-    
     NSNumber *onlineBoolInNumber = [value objectForKey:@"online"];
     NSInteger onlineFlagBool = [onlineBoolInNumber integerValue];
-    
-    if (onlineFlagBool == 0) {
-      aUser.onlineFlag = false;
-    }else {
-      aUser.onlineFlag = true;
+    switch (onlineFlagBool) {
+      case 0:
+        aUser.onlineFlag = false;
+        break;
+      case 1:
+        aUser.onlineFlag = true;
+        break;
     }
-    
     NSNumber *acceptedBoolInNumber = [value objectForKey:@"accepted"];
     NSInteger acceptedFlagBool = [acceptedBoolInNumber integerValue];
-    
-    if (acceptedFlagBool == 0) {
-      aUser.acceptedFlag = false;
-    }else {
-      aUser.acceptedFlag = true;
+    switch (acceptedFlagBool) {
+      case 0:
+        aUser.acceptedFlag = false;
+        break;
+      case 1:
+        aUser.acceptedFlag = true;
+        break;
     }
-    
     aUser.notificationCount = [value objectForKey:@"notificationCount"];
     [arrayOfUsers addObject:aUser];
   }

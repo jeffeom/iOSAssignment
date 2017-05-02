@@ -23,10 +23,13 @@
   }
 }
 - (IBAction)searchTapped:(id)sender {
-  if (self.navigationItem.titleView == self.searchBar) {
-    self.navigationItem.titleView = self.theView;
-  }else {
-    self.navigationItem.titleView = self.searchBar;
+  switch (self.navigationItem.titleView == self.searchBar) {
+    case true:
+      self.navigationItem.titleView = self.theView;
+      break;
+    case false:
+      self.navigationItem.titleView = self.searchBar;
+      break;
   }
 }
 
@@ -86,7 +89,6 @@
 }
 
 - (UITabBarItem *)setTabbarItemWithImage: (UIImage *)image andTag: (NSInteger)tagNumber {
-  
   UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:nil
                                                      image:image
                                                        tag:tagNumber];

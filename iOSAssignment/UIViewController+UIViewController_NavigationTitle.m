@@ -12,10 +12,10 @@
 
 - (void)setTitleWithTag {
   NSArray *titleArray = [[NSArray alloc] initWithObjects:@"Feed", @"Parkinson's", @"Programs", @"My Health", @"Profile", nil];
-  TabBarController *tc = (TabBarController *) self.tabBarController;
-  tc.navTitlelabel.textAlignment = NSTextAlignmentCenter;
-  tc.navTitlelabel.text = titleArray[self.tabBarItem.tag];
-  tc.navTitlelabel.textColor = [UIColor whiteColor];
+  TabBarController *tabBarController = (TabBarController *) self.tabBarController;
+  tabBarController.navTitlelabel.textAlignment = NSTextAlignmentCenter;
+  tabBarController.navTitlelabel.text = titleArray[self.tabBarItem.tag];
+  tabBarController.navTitlelabel.textColor = [UIColor whiteColor];
 }
 
 @end
