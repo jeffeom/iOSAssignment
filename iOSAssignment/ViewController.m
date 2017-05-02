@@ -48,22 +48,16 @@
   User *aUser = (User *)[self.arrayOfUsers objectAtIndex:indexPath.row];
   cell = [cell initWithName:aUser.displayName andImage:[UIImage imageNamed:aUser.displayName]];
   
-  switch (aUser.isOnline) {
-    case true:
-      cell.isOnline.image = [UIImage imageNamed:@"online"];
-      break;
-    case false:
-      cell.isOnline.image = [UIImage imageNamed:@"offline"];
-      break;
+  if (aUser.isOnline) {
+    cell.isOnline.image = [UIImage imageNamed:@"online"];
+  }else{
+    cell.isOnline.image = [UIImage imageNamed:@"offline"];
   }
   
-  switch (aUser.hasAccepted) {
-    case true:
-      cell.hasAccepted.hidden = true;
-      break;
-    case false:
-      cell.hasAccepted.hidden = false;
-      break;
+  if (aUser.hasAccepted) {
+    cell.hasAccepted.hidden = true;
+  }else {
+    cell.hasAccepted.hidden = false;
   }
   
   cell.notificationNumber.text = aUser.notificationCount.stringValue;
