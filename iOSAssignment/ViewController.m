@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 
+#pragma mark - Property
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIImageView *loggedInUser;
 @property (strong, nonatomic) NSArray *arrayOfUsers;
@@ -18,6 +19,7 @@
 
 @implementation ViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -34,6 +36,7 @@
   [self setTitleWithTag];
 }
 
+#pragma mark - CollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
   return self.cellCount;
@@ -82,6 +85,7 @@
   }
 }
 
+#pragma mark - Fetch data from JSON
 - (NSArray *)mapArrayOfUsersWithJSONDictionary:(NSDictionary *)jsonDictionary {
   NSMutableArray *arrayOfUsers = [NSMutableArray new];
   for (NSDictionary* value in jsonDictionary.allValues) {

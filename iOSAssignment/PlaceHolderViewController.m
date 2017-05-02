@@ -14,6 +14,7 @@
 
 @implementation PlaceHolderViewController
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor whiteColor];

@@ -11,7 +11,6 @@
 @implementation UIViewController (UIViewController_NavigationTitle)
 
 - (void)setTitleWithTag {
-  
   NSArray *titleArray = [[NSArray alloc] initWithObjects:@"Feed", @"Parkinson's", @"Programs", @"My Health", @"Profile", nil];
   TabBarController *tc = (TabBarController *) self.tabBarController;
   tc.navTitlelabel.textAlignment = NSTextAlignmentCenter;

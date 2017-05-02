@@ -10,6 +10,7 @@
 
 @implementation UserCollectionViewCell
 
+#pragma mark - Life Cycle
 - (instancetype)initWithName: (NSString *)name andImage: (UIImage *)image {
   _nameLabel.text = name;
   _image.image = image;

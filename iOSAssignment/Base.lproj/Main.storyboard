@@ -261,6 +261,9 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="search" id="D2R-5Z-C9K">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchTapped:" destination="O3h-tW-wIM" id="e1t-sJ-7gG"/>
+                            </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="Xi0-WW-W0M">
                             <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
@@ -310,10 +313,22 @@
                     <connections>
                         <outlet property="arrowImage" destination="PaW-4a-83U" id="KL0-2b-Ncw"/>
                         <outlet property="navTitlelabel" destination="f76-Cw-Uf7" id="Bgo-aN-9iE"/>
+                        <outlet property="searchBar" destination="ZbY-kM-ueb" id="JAY-Wk-YJX"/>
+                        <outlet property="theView" destination="Xi0-WW-W0M" id="6xE-8u-rvp"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="PfM-M6-cld"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvm-K7-FJz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" showsCancelButton="YES" id="ZbY-kM-ueb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="barTintColor" red="0.0" green="0.62745098040000002" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="O3h-tW-wIM" id="RMC-JU-QUd"/>
+                    </connections>
+                </searchBar>
                 <tapGestureRecognizer id="Ulo-I3-WVT">
                     <connections>
                         <action selector="navBarTitleTapped:" destination="O3h-tW-wIM" id="aDe-AM-nOq"/>

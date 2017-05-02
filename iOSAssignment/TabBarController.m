@@ -8,18 +8,32 @@
 
 #import "TabBarController.h"
 
+#pragma mark - Property
 @interface TabBarController ()
+@property (strong, nonatomic) IBOutlet UIView *theView;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UIImageView *arrowImage;
 @end
 
+#pragma mark - IBAction
 @implementation TabBarController
 - (IBAction)navBarTitleTapped:(id)sender {
-  [self rotateArrow];
+  if (self.navigationItem.titleView != self.searchBar) {
+    [self rotateArrow];
+  }
+}
+- (IBAction)searchTapped:(id)sender {
+  if (self.navigationItem.titleView == self.searchBar) {
+    self.navigationItem.titleView = self.theView;
+  }else {
+    self.navigationItem.titleView = self.searchBar;
+  }
 }
 
+#pragma mark - Life Cycle
 - (void)viewDidLoad {
-    [super viewDidLoad];
-
+  [super viewDidLoad];
+  
   UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
   ViewController *myCircle = (ViewController *)[storyBoard instantiateViewControllerWithIdentifier:@"myCircle"];
   PlaceHolderViewController *feed = [[PlaceHolderViewController alloc] init];
@@ -32,33 +46,34 @@
   [self setViewControllers:tabViewControllers];
   
   feed.tabBarItem = [self setTabbarItemWithImage: [self scaleImage:[UIImage imageNamed:@"feed"]
-                                                          withWidth: 20.0
-                                                          andHeight: 30.0]
+                                                         withWidth: 20.0
+                                                         andHeight: 30.0]
                                           andTag:0];
   
   myCircle.tabBarItem = [self setTabbarItemWithImage: [self scaleImage:[UIImage imageNamed:@"myCircle"]
-                                                          withWidth: 35.0
-                                                          andHeight: 30.0]
-                                           andTag:1];
+                                                             withWidth: 35.0
+                                                             andHeight: 30.0]
+                                              andTag:1];
   
   programs.tabBarItem = [self setTabbarItemWithImage: [self scaleImage:[UIImage imageNamed:@"programs"]
-                                                          withWidth: 35.0
-                                                          andHeight: 30.0]
-                                           andTag:2];
+                                                             withWidth: 35.0
+                                                             andHeight: 30.0]
+                                              andTag:2];
   
   myHealth.tabBarItem = [self setTabbarItemWithImage: [self scaleImage:[UIImage imageNamed:@"myHealth"]
-                                                          withWidth: 35.0
-                                                          andHeight: 30.0]
-                                           andTag:3];
+                                                             withWidth: 35.0
+                                                             andHeight: 30.0]
+                                              andTag:3];
   
   profile.tabBarItem = [self setTabbarItemWithImage: [self scaleImage:[UIImage imageNamed:@"profile"]
-                                                          withWidth: 25.0
-                                                          andHeight: 30.0]
-                                           andTag:4];
+                                                            withWidth: 25.0
+                                                            andHeight: 30.0]
+                                             andTag:4];
   
   self.selectedIndex = 1;
 }
 
+#pragma mark - Personal Function
 - (UIImage *)scaleImage: (UIImage *)imageToResize withWidth: (CGFloat)width andHeight: (CGFloat)height {
   UIImage *image = imageToResize;
   CGSize sacleSize = CGSizeMake(width, height);
@@ -83,6 +98,10 @@
   [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
     [self.arrowImage setTransform:CGAffineTransformRotate(self.arrowImage.transform, M_PI)];
   }completion:nil];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+  self.navigationItem.titleView = self.theView;
 }
 
 @end

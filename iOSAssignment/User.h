@@ -11,7 +11,6 @@
 @interface User : NSObject
 
 #pragma mark - Public
-
 @property (copy, nonatomic) NSString *displayName;
 @property (assign, getter=isOnline) BOOL onlineFlag;
 @property (assign, getter=hasAccepted) BOOL acceptedFlag;

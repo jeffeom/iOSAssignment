@@ -10,6 +10,7 @@
 
 @implementation CircularLayout
 
+#pragma mark - Collection View Delegate
 -(void)prepareLayout
 {
   [super prepareLayout];

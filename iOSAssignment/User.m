@@ -10,8 +10,7 @@
 
 @implementation User
 
-#pragma mark - LifeCycle
-
+#pragma mark - Life Cycle
 - (instancetype)initUserWithName: (NSString *)name
 {
   self = [super init];
