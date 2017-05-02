@@ -82,28 +82,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online" translatesAutoresizingMaskIntoConstraints="NO" id="egL-0m-bgK">
-                                                    <rect key="frame" x="15" y="40" width="20" height="20"/>
+                                                    <rect key="frame" x="17.5" y="42" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="egL-0m-bgK" secondAttribute="height" multiplier="1:1" id="FIm-a9-gLc"/>
-                                                        <constraint firstAttribute="height" constant="20" id="FQ7-Um-hTl"/>
+                                                        <constraint firstAttribute="height" constant="15" id="FQ7-Um-hTl"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBI-qL-0EB">
-                                                    <rect key="frame" x="-9" y="14.5" width="20" height="20"/>
+                                                    <rect key="frame" x="-6" y="17" width="15" height="15"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-of-28j">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="5fM-DP-FE9"/>
+                                                                <constraint firstAttribute="height" constant="15" id="5fM-DP-FE9"/>
                                                                 <constraint firstAttribute="width" secondItem="8dJ-of-28j" secondAttribute="height" multiplier="1:1" id="qk3-5Q-W2R"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj6-h0-Lzc">
-                                                            <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                                            <rect key="frame" x="1.5" y="1.5" width="12" height="12"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Aj6-h0-Lzc" secondAttribute="height" multiplier="1:1" id="ucB-Rx-txx"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -115,7 +115,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="8dJ-of-28j" secondAttribute="bottom" id="IyT-3l-hHK"/>
                                                         <constraint firstAttribute="trailing" secondItem="8dJ-of-28j" secondAttribute="trailing" id="JxU-vT-pJo"/>
                                                         <constraint firstItem="8dJ-of-28j" firstAttribute="top" secondItem="mBI-qL-0EB" secondAttribute="top" id="b1z-2B-ZQV"/>
-                                                        <constraint firstAttribute="width" constant="20" id="iIQ-cu-TGG"/>
+                                                        <constraint firstAttribute="width" constant="15" id="iIQ-cu-TGG"/>
                                                         <constraint firstItem="8dJ-of-28j" firstAttribute="leading" secondItem="mBI-qL-0EB" secondAttribute="leading" id="ko5-0O-QE0"/>
                                                         <constraint firstItem="Aj6-h0-Lzc" firstAttribute="centerX" secondItem="8dJ-of-28j" secondAttribute="centerX" id="qTi-89-SJT"/>
                                                     </constraints>
@@ -130,8 +130,8 @@
                                             <constraint firstItem="BH1-yN-tdV" firstAttribute="centerY" secondItem="uoB-fq-gZE" secondAttribute="centerY" id="Hus-aS-Sga"/>
                                             <constraint firstItem="AVg-jQ-oma" firstAttribute="bottom" secondItem="uoB-fq-gZE" secondAttribute="bottomMargin" id="Xt9-Df-w0e"/>
                                             <constraint firstItem="AVg-jQ-oma" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="asX-Iv-Rga"/>
-                                            <constraint firstAttribute="bottom" secondItem="egL-0m-bgK" secondAttribute="bottom" constant="-10" id="cXA-Cb-sCI"/>
-                                            <constraint firstItem="mBI-qL-0EB" firstAttribute="leading" secondItem="uoB-fq-gZE" secondAttribute="leading" constant="-9" id="gFP-Pm-FLw"/>
+                                            <constraint firstAttribute="bottom" secondItem="egL-0m-bgK" secondAttribute="bottom" constant="-7" id="cXA-Cb-sCI"/>
+                                            <constraint firstItem="mBI-qL-0EB" firstAttribute="leading" secondItem="uoB-fq-gZE" secondAttribute="leading" constant="-6" id="gFP-Pm-FLw"/>
                                             <constraint firstItem="BH1-yN-tdV" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="gOR-Aa-P2P"/>
                                             <constraint firstItem="LZx-a6-1si" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="qN6-7h-O8k"/>
                                             <constraint firstItem="LZx-a6-1si" firstAttribute="centerY" secondItem="uoB-fq-gZE" secondAttribute="centerY" id="tPT-DG-50C"/>
@@ -236,10 +236,9 @@
         <!--Navigation Controller-->
         <scene sceneID="7Ox-J1-PFk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="feh-11-NfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2vR-2b-7zI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Vld-Iz-jgy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Vld-Iz-jgy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.62745098039215685" blue="0.82352941176470584" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,6 +248,7 @@
                         <segue destination="O3h-tW-wIM" kind="relationship" relationship="rootViewController" id="5kZ-aO-tEg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="feh-11-NfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="322" y="139"/>
         </scene>
@@ -259,7 +259,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="gyn-gm-Dct">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="D2R-5Z-C9K">
+                        <barButtonItem key="leftBarButtonItem" image="search" id="D2R-5Z-C9K">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="Xi0-WW-W0M">
@@ -325,12 +325,13 @@
     </scenes>
     <resources>
         <image name="Me" width="165" height="165"/>
-        <image name="arrowDown" width="25" height="25"/>
-        <image name="badge" width="5" height="5"/>
-        <image name="expand" width="14" height="14"/>
-        <image name="findPeople" width="14" height="14"/>
-        <image name="message" width="25" height="25"/>
-        <image name="notification" width="20" height="25"/>
-        <image name="online" width="5" height="5"/>
+        <image name="arrowDown" width="34" height="34"/>
+        <image name="badge" width="16" height="16"/>
+        <image name="expand" width="43" height="43"/>
+        <image name="findPeople" width="44" height="44"/>
+        <image name="message" width="15" height="15"/>
+        <image name="notification" width="12" height="15"/>
+        <image name="online" width="15" height="15"/>
+        <image name="search" width="13" height="13"/>
     </resources>
 </document>
