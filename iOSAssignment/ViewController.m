@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIImageView *loggedInUser;
 @property (strong, nonatomic) NSArray *arrayOfUsers;
+@property NSInteger zCount;
+@property UICollectionViewCell *historyCell;
 
 @end
 
@@ -28,6 +30,7 @@
   self.arrayOfUsers = [self mapArrayOfUsersWithJSONDictionary:jsonList];
   self.cellCount = self.arrayOfUsers.count;
   [self.collectionView reloadData];
+  self.zCount = 0;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -73,17 +76,26 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath  {
+  CGFloat badgeHalfSize = 15 / 2.0;
   CGPoint centerOfCV = CGPointMake(self.collectionView.frame.size.width / 2.0, self.collectionView.frame.size.height / 2.0);
+  CGPoint centerWithAcc = CGPointMake(self.loggedInUser.center.x - badgeHalfSize, self.loggedInUser.center.y - badgeHalfSize);
   UICollectionViewCell *datasetCell = [collectionView cellForItemAtIndexPath:indexPath];
-  if (CGPointEqualToPoint(datasetCell.center,centerOfCV))
+  if (CGPointEqualToPoint(datasetCell.center,centerOfCV) || CGPointEqualToPoint(datasetCell.center,centerWithAcc))
   {
-    [self.collectionView performBatchUpdates:^{
-      [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-    } completion:nil];
+    BOOL animationsEnabled = [UIView areAnimationsEnabled];
+    [UIView setAnimationsEnabled:NO];
+    [self.collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    [UIView setAnimationsEnabled:animationsEnabled];
   }else {
-    [UIView animateWithDuration:1.0 animations:^{
+    if (self.historyCell != nil && !self.historyCell.hidden ) {
+      self.historyCell.center = centerOfCV;
+      [self.historyCell addSubview:datasetCell];
+      datasetCell.center = centerWithAcc;
+      [self.historyCell bringSubviewToFront:datasetCell];
+    }else {
       datasetCell.center = centerOfCV;
-    }];
+      self.historyCell = datasetCell;
+    }
   }
 }
 

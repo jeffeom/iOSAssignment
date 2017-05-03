@@ -82,14 +82,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online" translatesAutoresizingMaskIntoConstraints="NO" id="egL-0m-bgK">
-                                                    <rect key="frame" x="17.5" y="42" width="15" height="15"/>
+                                                    <rect key="frame" x="17.5" y="39" width="15" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="egL-0m-bgK" secondAttribute="height" multiplier="1:1" id="FIm-a9-gLc"/>
                                                         <constraint firstAttribute="height" constant="15" id="FQ7-Um-hTl"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBI-qL-0EB">
-                                                    <rect key="frame" x="-6" y="17" width="15" height="15"/>
+                                                    <rect key="frame" x="-3" y="17" width="15" height="15"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge" translatesAutoresizingMaskIntoConstraints="NO" id="8dJ-of-28j">
                                                             <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -130,8 +130,8 @@
                                             <constraint firstItem="BH1-yN-tdV" firstAttribute="centerY" secondItem="uoB-fq-gZE" secondAttribute="centerY" id="Hus-aS-Sga"/>
                                             <constraint firstItem="AVg-jQ-oma" firstAttribute="bottom" secondItem="uoB-fq-gZE" secondAttribute="bottomMargin" id="Xt9-Df-w0e"/>
                                             <constraint firstItem="AVg-jQ-oma" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="asX-Iv-Rga"/>
-                                            <constraint firstAttribute="bottom" secondItem="egL-0m-bgK" secondAttribute="bottom" constant="-7" id="cXA-Cb-sCI"/>
-                                            <constraint firstItem="mBI-qL-0EB" firstAttribute="leading" secondItem="uoB-fq-gZE" secondAttribute="leading" constant="-6" id="gFP-Pm-FLw"/>
+                                            <constraint firstAttribute="bottom" secondItem="egL-0m-bgK" secondAttribute="bottom" constant="-4" id="cXA-Cb-sCI"/>
+                                            <constraint firstItem="mBI-qL-0EB" firstAttribute="leading" secondItem="uoB-fq-gZE" secondAttribute="leading" constant="-3" id="gFP-Pm-FLw"/>
                                             <constraint firstItem="BH1-yN-tdV" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="gOR-Aa-P2P"/>
                                             <constraint firstItem="LZx-a6-1si" firstAttribute="centerX" secondItem="uoB-fq-gZE" secondAttribute="centerX" id="qN6-7h-O8k"/>
                                             <constraint firstItem="LZx-a6-1si" firstAttribute="centerY" secondItem="uoB-fq-gZE" secondAttribute="centerY" id="tPT-DG-50C"/>
